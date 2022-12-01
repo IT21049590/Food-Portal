@@ -1,0 +1,43 @@
+<html>
+    <head>
+ <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+    </head>
+    <body>
+    <script type="text/javascript">
+    
+    var stringa=sessionStorage.getItem('array');
+    var parsear=JSON.parse(stringa);
+    console.log(parsear[0].Food_Name);
+    console.log(parsear);
+    let tot=0;
+    document.write("<table >"+" <tr> <th> Product Name </th> <th> Quantity </th> <th> Price</th> </tr>");
+     for(let i = 0; i < parsear.length; i++)
+    	{
+    	
+         document.write("<tr><td>"+parsear[i].Food_Name+"</td><td>"+parsear[i].Quantity+"</td><td>"+parsear[i].Total+"</td></tr>");
+         tot=tot+parseInt(parsear[i].Total);
+    	} 
+        document.write("<p >Total Bill Price : "+tot+"</p>");
+    
+    </script>
+    
+
+    </body>
+</html>
